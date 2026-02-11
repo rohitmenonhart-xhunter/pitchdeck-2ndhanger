@@ -1,0 +1,629 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Apple Garamond Light */
+@font-face {
+  font-family: 'Apple Garamond';
+  src: url('/font/apple_garamond (1)/AppleGaramond-Light.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Apple Garamond';
+  src: url('/font/apple_garamond (1)/AppleGaramond-LightItalic.ttf') format('truetype');
+  font-weight: 300;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Apple Garamond';
+  src: url('/font/apple_garamond (1)/AppleGaramond.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Apple Garamond';
+  src: url('/font/apple_garamond (1)/AppleGaramond-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Garamond highlight text */
+.font-garamond {
+  font-family: 'Apple Garamond', 'EB Garamond', Georgia, serif;
+  font-weight: 300;
+}
+
+/* Curved underline effect */
+.garamond-underline {
+  position: relative;
+  display: inline-block;
+}
+
+.garamond-underline::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -4px;
+  height: 6px;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 8' preserveAspectRatio='none'%3E%3Cpath d='M0 7 Q25 0 50 4 Q75 8 100 1' stroke='%23FF3366' stroke-width='2' fill='none' stroke-linecap='round'/%3E%3C/svg%3E") no-repeat;
+  background-size: 100% 100%;
+}
+
+/* Liquid glass overlay */
+.liquid-glass-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 50;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  backdrop-filter: blur(24px) saturate(1.5) brightness(0.7);
+  -webkit-backdrop-filter: blur(24px) saturate(1.5) brightness(0.7);
+  background: radial-gradient(ellipse at 30% 20%, rgba(255, 51, 102, 0.08) 0%, transparent 60%),
+    radial-gradient(ellipse at 70% 80%, rgba(127, 200, 227, 0.06) 0%, transparent 60%),
+    rgba(10, 10, 10, 0.35);
+}
+
+.liquid-glass-overlay .glass-card {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 20px;
+  padding: 2rem 2.5rem;
+  backdrop-filter: blur(40px);
+  -webkit-backdrop-filter: blur(40px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  text-align: center;
+  max-width: 320px;
+}
+
+.liquid-glass-overlay .glass-btn {
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 12px;
+  padding: 0.75rem 2rem;
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+
+.liquid-glass-overlay .glass-btn:hover {
+  background: rgba(255, 255, 255, 0.2);
+  border-color: rgba(255, 255, 255, 0.35);
+  transform: scale(1.02);
+}
+
+.liquid-glass-overlay .glass-btn:active {
+  transform: scale(0.98);
+}
+
+/* =========================================
+   2ND HANGER — NEOBRUTALIST RETRO COMPUTER
+   ========================================= */
+
+:root {
+  /* Core palette */
+  --bg-cream: #FAF7F2;
+  --bg-warm: #F5F0E8;
+  --bg-card: #FFFFFF;
+  --text-primary: #1A1A1A;
+  --text-secondary: #4A4A4A;
+  --text-muted: #8A8A8A;
+  --border-hard: #1A1A1A;
+  --border-soft: #E0DCD4;
+
+  /* Accent colors */
+  --accent-pink: #FF3366;
+  --accent-coral: #FF6B5A;
+  --accent-peach: #FFAD9E;
+  --accent-yellow: #FFD166;
+  --accent-mint: #A8E6CF;
+  --accent-blue: #7EC8E3;
+  --accent-lavender: #C8B6FF;
+  --accent-green: #4CAF50;
+
+  /* Card fills */
+  --fill-pink: #FFE0E8;
+  --fill-yellow: #FFF3D0;
+  --fill-peach: #FFE5DE;
+  --fill-mint: #E0F5EC;
+  --fill-blue: #E0F0FA;
+  --fill-lavender: #EDE5FF;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html,
+  body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    height: 100%;
+    width: 100%;
+    background: var(--bg-cream);
+    color: var(--text-primary);
+  }
+
+  body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  ::selection {
+    background: var(--accent-pink);
+    color: #FFFFFF;
+  }
+}
+
+/* === TYPOGRAPHY === */
+.font-display {
+  font-family: 'Space Grotesk', 'Inter', system-ui, sans-serif;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+}
+
+.font-body {
+  font-family: 'Space Grotesk', 'Inter', system-ui, sans-serif;
+  font-weight: 400;
+}
+
+.font-mono {
+  font-family: 'JetBrains Mono', 'SF Mono', 'Fira Code', monospace;
+}
+
+/* === SLIDE CONTAINER === */
+.slide-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem 0.75rem 3rem;
+  position: relative;
+  overflow-y: auto;
+  overflow-x: hidden;
+  background: var(--bg-cream);
+}
+
+@media (min-width: 480px) {
+  .slide-container {
+    padding: 2rem 1.25rem 3rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .slide-container {
+    padding: 2.5rem 2.5rem 3.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .slide-container {
+    padding: 3rem 5rem 3.5rem;
+    overflow: hidden;
+  }
+}
+
+/* Mobile-first: keep inline nested bars full-width */
+@media (max-width: 640px) {
+
+  .slide-container [style*="width: 75%"],
+  .slide-container [style*="width: 50%"] {
+    width: 100% !important;
+  }
+}
+
+/* === NEOBRUTALIST CARD === */
+.neo-card {
+  background: var(--bg-card);
+  border: 2px solid var(--border-hard);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.neo-card:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 4px 4px 0px var(--border-hard);
+}
+
+.neo-card-flat {
+  background: var(--bg-card);
+  border: 2px solid var(--border-hard);
+}
+
+/* Color-filled cards */
+.neo-card-pink {
+  background: var(--fill-pink);
+  border: 2px solid var(--border-hard);
+}
+
+.neo-card-yellow {
+  background: var(--fill-yellow);
+  border: 2px solid var(--border-hard);
+}
+
+.neo-card-peach {
+  background: var(--fill-peach);
+  border: 2px solid var(--border-hard);
+}
+
+.neo-card-mint {
+  background: var(--fill-mint);
+  border: 2px solid var(--border-hard);
+}
+
+.neo-card-blue {
+  background: var(--fill-blue);
+  border: 2px solid var(--border-hard);
+}
+
+.neo-card-lavender {
+  background: var(--fill-lavender);
+  border: 2px solid var(--border-hard);
+}
+
+/* Solid accent cards */
+.neo-card-solid-pink {
+  background: var(--accent-pink);
+  border: 2px solid var(--border-hard);
+  color: #FFFFFF;
+}
+
+.neo-card-solid-coral {
+  background: var(--accent-coral);
+  border: 2px solid var(--border-hard);
+  color: #FFFFFF;
+}
+
+.neo-card-solid-yellow {
+  background: var(--accent-yellow);
+  border: 2px solid var(--border-hard);
+  color: var(--text-primary);
+}
+
+/* === NEOBRUTALIST BUTTON === */
+.neo-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.625rem 1.5rem;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  border: 2px solid var(--border-hard);
+  background: var(--bg-card);
+  color: var(--text-primary);
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.neo-btn:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 4px 4px 0px var(--border-hard);
+}
+
+.neo-btn:active {
+  transform: translate(0, 0);
+  box-shadow: none;
+}
+
+.neo-btn-primary {
+  background: var(--accent-pink);
+  color: #FFFFFF;
+  border-color: var(--border-hard);
+}
+
+.neo-btn-primary:hover {
+  background: #E62D5C;
+}
+
+/* === BADGE / TAG === */
+.neo-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.375rem 0.875rem;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.6rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  border: 2px solid var(--border-hard);
+  background: var(--bg-card);
+}
+
+.neo-tag-pink {
+  background: var(--accent-pink);
+  color: #FFFFFF;
+}
+
+.neo-tag-yellow {
+  background: var(--accent-yellow);
+  color: var(--text-primary);
+}
+
+.neo-tag-coral {
+  background: var(--accent-coral);
+  color: #FFFFFF;
+}
+
+/* === SLIDE NUMBER === */
+.slide-number {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.6rem;
+  letter-spacing: 0.15em;
+  color: var(--text-muted);
+  border: 2px solid var(--border-soft);
+  padding: 0.25rem 0.75rem;
+  background: var(--bg-card);
+}
+
+@media (min-width: 768px) {
+  .slide-number {
+    top: 2rem;
+    right: 2.5rem;
+  }
+}
+
+/* === DIVIDER === */
+.neo-divider {
+  width: 100%;
+  height: 2px;
+  background: var(--border-hard);
+}
+
+.neo-divider-soft {
+  width: 100%;
+  height: 1px;
+  background: var(--border-soft);
+}
+
+/* === ANIMATIONS === */
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-16px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideLeft {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideRight {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes fillBar {
+  from {
+    width: 0;
+  }
+
+  to {
+    width: var(--fill-width, 100%);
+  }
+}
+
+@keyframes blink {
+
+  0%,
+  50% {
+    opacity: 1;
+  }
+
+  51%,
+  100% {
+    opacity: 0;
+  }
+}
+
+.animate-slide-up {
+  opacity: 0;
+  animation: slideUp 0.6s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.animate-slide-down {
+  opacity: 0;
+  animation: slideDown 0.5s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.animate-slide-left {
+  opacity: 0;
+  animation: slideLeft 0.6s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.animate-slide-right {
+  opacity: 0;
+  animation: slideRight 0.6s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.animate-fade-in {
+  opacity: 0;
+  animation: fadeIn 0.5s ease forwards;
+}
+
+.animate-scale-in {
+  opacity: 0;
+  animation: scaleIn 0.4s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.animate-fill {
+  animation: fillBar 1.2s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.cursor-blink {
+  animation: blink 1s step-end infinite;
+}
+
+.animate-delay-1 {
+  animation-delay: 0.1s;
+}
+
+.animate-delay-2 {
+  animation-delay: 0.2s;
+}
+
+.animate-delay-3 {
+  animation-delay: 0.3s;
+}
+
+.animate-delay-4 {
+  animation-delay: 0.4s;
+}
+
+.animate-delay-5 {
+  animation-delay: 0.5s;
+}
+
+.animate-delay-6 {
+  animation-delay: 0.6s;
+}
+
+.animate-delay-7 {
+  animation-delay: 0.7s;
+}
+
+.animate-delay-8 {
+  animation-delay: 0.8s;
+}
+
+.animate-delay-9 {
+  animation-delay: 0.9s;
+}
+
+.animate-delay-10 {
+  animation-delay: 1.0s;
+}
+
+/* === RETRO GRID BG === */
+.retro-grid {
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 0, 0, 0.03) 1px, transparent 1px);
+  background-size: 48px 48px;
+}
+
+/* === STAT NUMBER === */
+.stat-number {
+  font-family: 'Space Grotesk', system-ui, sans-serif;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.03em;
+}
+
+/* === SCROLLBAR === */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-cream);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border-soft);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-muted);
+}
+
+/* === DARK SLIDE VARIANT === */
+.slide-dark {
+  background: var(--text-primary);
+  color: var(--bg-cream);
+}
+
+.slide-dark .neo-card {
+  background: #2A2A2A;
+  border-color: #444;
+  color: var(--bg-cream);
+}
+
+.slide-dark .neo-card:hover {
+  box-shadow: 4px 4px 0px #444;
+}
+
+/* === PROGRESS / BAR CHART === */
+.bar-chart-bar {
+  transition: width 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+}
