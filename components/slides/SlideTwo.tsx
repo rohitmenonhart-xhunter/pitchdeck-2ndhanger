@@ -1,75 +1,61 @@
 'use client';
 
-const IDENTITY = [
+const PAIN_POINTS = [
   {
-    title: 'Zero-to-one builder.',
-    desc: 'Built and shipped lighting design software with 3D visualization, magnetic track systems, and BOM generation — managing 13 feature categories simultaneously. I don\'t plan products. I build them.',
+    title: 'Damage Risk',
+    desc: 'Coal irons burn, scorch, and leave marks. One mistake ruins a ₹2,000 shirt. Zero compensation.',
     fill: 'neo-card-peach',
   },
   {
-    title: 'Market proof, not market research.',
-    desc: 'Walked into an apartment complex, knocked on 20 doors, got paying customers the same day. No ads. No discounts. Full price. Day 1 revenue.',
+    title: 'Inconvenience',
+    desc: 'Carry clothes to the dhobi, wait 1-2 days, go back to collect. No doorstep. No tracking.',
     fill: 'neo-card-yellow',
   },
   {
-    title: 'Architect + Operator.',
-    desc: '8 Express.js microservices, PostgreSQL, Docker-to-Kubernetes scaling path. Also designed the unit economics, hub model, and financial projections. I build the system AND run it.',
+    title: 'Unreliability',
+    desc: 'No fixed timing. No quality guarantee. Different results every time.',
     fill: 'neo-card-mint',
   },
-  {
-    title: 'Infrastructure, not services.',
-    desc: 'I don\'t see a laundry business. I see a garment care processing network that scales like Zepto\'s dark stores — one hub at a time, one city at a time, until we own the category.',
-    fill: 'neo-card-blue',
-  },
-];
-
-const COFOUNDERS = [
-  { name: 'Murahari', role: 'Co-Founder (25%)', desc: 'Operations & logistics. Every garment reaches every doorstep perfectly, every single day.' },
-  { name: 'Vibhav', role: 'Co-Founder (25%)', desc: 'Growth & acquisition. Gets the first 200 households in every hub we open.' },
-  { name: 'Hitroo', role: 'Technology Partner', desc: 'Full-stack app: Kotlin + Express.js. Dev cost on us, not on investor capital.' },
 ];
 
 export function SlideTwo() {
   return (
     <div className="slide-container retro-grid">
-      <div className="slide-number">02 / 17</div>
+      <div className="slide-number">02 / 19</div>
 
-      <div className="max-w-6xl mx-auto w-full px-4 sm:px-6">
-        <div className="text-center mb-4 md:mb-5">
-          <div className="neo-tag inline-flex mb-3 animate-fade-in">
-            <span>The Founder — Why Me</span>
+      <div className="max-w-5xl mx-auto w-full px-4 sm:px-6">
+        <div className="text-center mb-3 sm:mb-5 md:mb-6">
+          <div className="neo-tag-pink inline-flex mb-2 sm:mb-4 animate-fade-in">
+            <span>The Problem</span>
           </div>
           <h2 className="font-display text-xl sm:text-3xl md:text-4xl text-[#1A1A1A] animate-slide-up">
-            Rohit <span className="text-[#8A8A8A] text-lg md:text-xl">CEO & Co-Founder</span>
+            30 Crore Households. <span className="text-[#FF3366]">Same Coal Iron Since 1950.</span>
           </h2>
         </div>
 
-        {/* Identity cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-2.5 md:gap-3 mb-4">
-          {IDENTITY.map((item, i) => (
-            <div key={i} className={`${item.fill} p-3 md:p-4 animate-slide-up animate-delay-${i + 1}`}>
-              <h3 className="font-display text-sm text-[#1A1A1A] mb-1.5">{item.title}</h3>
-              <p className="text-[10px] md:text-[11px] text-[#4A4A4A] leading-relaxed">{item.desc}</p>
+        <p className="text-[11px] sm:text-sm text-[#4A4A4A] text-center max-w-3xl mx-auto mb-4 sm:mb-6 animate-fade-in animate-delay-1 leading-relaxed">
+          Every Indian household irons clothes. The solution hasn&apos;t changed in 70 years — a roadside dhobi with a coal iron.
+          No quality control, no accountability, and a real risk of damage to your clothes.
+        </p>
+
+        {/* Pain points */}
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-2 sm:gap-3 md:gap-4 max-w-4xl mx-auto mb-4 sm:mb-5">
+          {PAIN_POINTS.map((item, i) => (
+            <div key={i} className={`${item.fill} p-3 sm:p-4 md:p-5 animate-slide-up animate-delay-${i + 2}`}>
+              <h3 className="font-display text-sm sm:text-base text-[#1A1A1A] mb-1.5 sm:mb-2 flex items-center gap-2">
+                <span className="w-2.5 h-2.5 bg-[#FF3366] border border-[#1A1A1A] flex-shrink-0" />
+                {item.title}
+              </h3>
+              <p className="text-[10px] sm:text-[11px] text-[#4A4A4A] leading-relaxed">{item.desc}</p>
             </div>
           ))}
         </div>
 
-        {/* Co-founders */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-2.5 animate-fade-in animate-delay-5">
-          {COFOUNDERS.map((c, i) => (
-            <div key={i} className="neo-card-flat p-3">
-              <div className="flex items-center gap-2 mb-1.5">
-                <div className="w-7 h-7 bg-[#FF3366] border-2 border-[#1A1A1A] flex items-center justify-center flex-shrink-0">
-                  <span className="font-display text-[10px] text-white font-bold">{c.name[0]}</span>
-                </div>
-                <div>
-                  <span className="text-xs font-bold text-[#1A1A1A]">{c.name}</span>
-                  <span className="font-mono text-[8px] text-[#8A8A8A] ml-1.5">{c.role}</span>
-                </div>
-              </div>
-              <p className="text-[10px] text-[#4A4A4A]">{c.desc}</p>
-            </div>
-          ))}
+        <div className="neo-card-solid-pink p-3 max-w-2xl mx-auto text-center animate-scale-in animate-delay-6 shadow-[4px_4px_0px_#1A1A1A]">
+          <p className="text-[10px] sm:text-sm font-bold text-white">
+            95%+ of the market remains unorganised. The existing organised players focus on premium laundry —{' '}
+            <span className="text-white/70">nobody has solved everyday ironing at scale.</span>
+          </p>
         </div>
       </div>
     </div>

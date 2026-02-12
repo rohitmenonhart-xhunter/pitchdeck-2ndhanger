@@ -1,100 +1,56 @@
 'use client';
 
+const HUBS = [
+    { count: '1 Hub', overhead: '₹56,500/hub', breakeven: '338 pcs/day' },
+    { count: '2 Hubs', overhead: '₹28,250/hub', breakeven: '248 pcs/day' },
+    { count: '3 Hubs', overhead: '₹18,833/hub', breakeven: '216 pcs/day' },
+    { count: '5 Hubs', overhead: '₹11,300/hub', breakeven: '194 pcs/day' },
+];
+
 export function SlideEleven() {
     return (
         <div className="slide-container retro-grid">
-            <div className="slide-number">11 / 17</div>
+            <div className="slide-number">11 / 19</div>
 
-            <div className="max-w-6xl mx-auto w-full px-4 sm:px-6">
-                <div className="text-center mb-4 md:mb-5">
-                    <div className="neo-tag-pink inline-flex mb-3 animate-fade-in">
-                        <span>Hub Economics</span>
+            <div className="max-w-5xl mx-auto w-full px-4 sm:px-6">
+                <div className="text-center mb-3 sm:mb-5 md:mb-6">
+                    <div className="neo-tag-coral inline-flex mb-2 sm:mb-4 animate-fade-in">
+                        <span>Scaling Advantage</span>
                     </div>
                     <h2 className="font-display text-xl sm:text-3xl md:text-4xl text-[#1A1A1A] animate-slide-up">
-                        Each hub is a <span className="text-[#FF3366]">₹19L/year profit machine.</span>
+                        Every New Hub Gets Easier. <span className="text-[#FF3366]">Here&apos;s Why.</span>
                     </h2>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-4 mb-4">
-                    {/* Revenue */}
-                    <div className="neo-card-mint p-4 md:p-5 animate-slide-right animate-delay-2">
-                        <h3 className="font-display text-sm text-[#1A1A1A] mb-3 flex items-center gap-2">
-                            <span className="w-3 h-3 bg-[#4CAF50] border border-[#1A1A1A]" />
-                            Daily Revenue (500 pcs/day)
-                        </h3>
-                        <div className="space-y-1">
-                            {[
-                                { tier: 'Standard (65%)', calc: '325 × ₹11', value: '₹3,575' },
-                                { tier: 'Delicate (15%)', calc: '75 × ₹19', value: '₹1,425' },
-                                { tier: 'Saree/Suit (10%)', calc: '50 × ₹32', value: '₹1,600' },
-                                { tier: 'Aroma (30%)', calc: '150 × ₹3', value: '₹450' },
-                            ].map((item, i) => (
-                                <div key={i} className="flex items-center justify-between py-1 border-b border-[#1A1A1A]/10 last:border-0">
-                                    <span className="text-[10px] text-[#4A4A4A]">{item.tier}</span>
-                                    <div className="flex items-center gap-2">
-                                        <span className="font-mono text-[9px] text-[#8A8A8A]">{item.calc}</span>
-                                        <span className="font-mono text-[10px] font-bold text-[#1A1A1A]">{item.value}</span>
-                                    </div>
-                                </div>
-                            ))}
-                        </div>
-                        <div className="mt-2 pt-2 border-t-2 border-[#1A1A1A] flex justify-between">
-                            <span className="text-xs font-bold text-[#1A1A1A]">Daily Total</span>
-                            <span className="stat-number text-lg text-[#1A1A1A]">₹7,050</span>
-                        </div>
-                        <div className="font-mono text-[9px] text-[#8A8A8A] text-right mt-1">Blended avg: ₹14.10/pc</div>
+                <div className="neo-card-flat p-3 sm:p-4 max-w-3xl mx-auto mb-4 sm:mb-5 animate-fade-in animate-delay-2">
+                    <div className="flex items-center justify-between mb-3">
+                        <span className="font-display text-xs sm:text-sm text-[#1A1A1A]">Company Overhead</span>
+                        <span className="stat-number text-lg sm:text-2xl text-[#FF3366]">₹56,500</span>
                     </div>
+                    <p className="text-[9px] sm:text-[10px] text-[#8A8A8A] mb-4">
+                        Stays flat. Each new hub only adds ₹65,000. More hubs = more dilution of fixed overhead = easier economics per hub.
+                    </p>
 
-                    {/* OPEX */}
-                    <div className="neo-card-peach p-4 md:p-5 animate-slide-left animate-delay-3">
-                        <h3 className="font-display text-sm text-[#1A1A1A] mb-3 flex items-center gap-2">
-                            <span className="w-3 h-3 bg-[#FF6B5A] border border-[#1A1A1A]" />
-                            Monthly OPEX
-                        </h3>
-                        <div className="space-y-1">
-                            {[
-                                { item: 'Operators (2)', cost: '₹24,000' },
-                                { item: 'Rent', cost: '₹10,000' },
-                                { item: 'Electricity', cost: '₹8,000' },
-                                { item: 'Van fuel', cost: '₹9,000' },
-                                { item: 'Helper + Water + Aroma', cost: '₹11,000' },
-                                { item: 'Software + Marketing + Misc', cost: '₹12,000' },
-                            ].map((item, i) => (
-                                <div key={i} className="flex items-center justify-between py-1 border-b border-[#1A1A1A]/10 last:border-0">
-                                    <span className="text-[10px] text-[#4A4A4A]">{item.item}</span>
-                                    <span className="font-mono text-[10px] font-bold text-[#1A1A1A]">{item.cost}</span>
+                    {/* Hub scaling table */}
+                    <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 sm:gap-3">
+                        {HUBS.map((h, i) => {
+                            const isLast = i === HUBS.length - 1;
+                            return (
+                                <div key={i} className={`${isLast ? 'neo-card-solid-pink shadow-[3px_3px_0px_#1A1A1A]' : i % 2 === 0 ? 'neo-card-yellow' : 'neo-card-mint'} p-2 sm:p-3 text-center animate-slide-up animate-delay-${i + 3}`}>
+                                    <span className={`font-display text-xs sm:text-sm block mb-1 ${isLast ? 'text-white' : 'text-[#1A1A1A]'}`}>{h.count}</span>
+                                    <span className={`font-mono text-[8px] sm:text-[9px] block ${isLast ? 'text-white/70' : 'text-[#8A8A8A]'}`}>Overhead: {h.overhead}</span>
+                                    <span className={`font-mono text-[9px] sm:text-[10px] font-bold block mt-1 ${isLast ? 'text-white' : 'text-[#FF3366]'}`}>BE: {h.breakeven}</span>
                                 </div>
-                            ))}
-                        </div>
-                        <div className="mt-2 pt-2 border-t-2 border-[#1A1A1A] flex justify-between">
-                            <span className="text-xs font-bold text-[#1A1A1A]">Total OPEX</span>
-                            <span className="stat-number text-lg text-[#1A1A1A]">₹74,000</span>
-                        </div>
+                            );
+                        })}
                     </div>
                 </div>
 
-                {/* Bottom bar */}
-                <div className="grid grid-cols-3 gap-2 md:gap-3 animate-fade-in animate-delay-5">
-                    <div className="neo-card-solid-pink p-3 text-center shadow-[3px_3px_0px_#1A1A1A]">
-                        <div className="stat-number text-xl md:text-2xl text-white">₹1.09L</div>
-                        <div className="font-mono text-[8px] text-white/70 mt-1">MONTHLY PROFIT</div>
-                        <div className="font-mono text-[8px] text-white/50">60% margin</div>
-                    </div>
-                    <div className="neo-card-solid-yellow p-3 text-center shadow-[3px_3px_0px_#1A1A1A]">
-                        <div className="stat-number text-xl md:text-2xl text-[#1A1A1A]">₹10L</div>
-                        <div className="font-mono text-[8px] text-[#1A1A1A]/70 mt-1">SETUP COST</div>
-                        <div className="font-mono text-[8px] text-[#1A1A1A]/50">7-8 mo payback</div>
-                    </div>
-                    <div className="neo-card-mint p-3 text-center border-2 border-[#1A1A1A] shadow-[3px_3px_0px_#1A1A1A]">
-                        <div className="stat-number text-xl md:text-2xl text-[#1A1A1A]">₹19L</div>
-                        <div className="font-mono text-[8px] text-[#4A4A4A] mt-1">ANNUAL PROFIT</div>
-                        <div className="font-mono text-[8px] text-[#8A8A8A]">at 600 pcs/day</div>
-                    </div>
+                <div className="neo-card-solid-yellow p-2 sm:p-3 max-w-2xl mx-auto text-center animate-scale-in animate-delay-8 shadow-[3px_3px_0px_#1A1A1A]">
+                    <p className="text-[10px] sm:text-xs font-bold text-[#1A1A1A]">
+                        Same founder team. Same software. Same CA. <span className="text-[#FF3366]">More hubs = easier economics per hub.</span>
+                    </p>
                 </div>
-
-                <p className="text-center text-[10px] text-[#FF3366] font-bold mt-3 animate-fade-in animate-delay-7">
-                    &ldquo;Show me another business where ₹10L generates ₹13-19L annual profit with 60% margins and zero labour risk.&rdquo;
-                </p>
             </div>
         </div>
     );

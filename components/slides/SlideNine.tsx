@@ -1,69 +1,50 @@
 'use client';
 
+const ALLOCATIONS = [
+    { label: 'Hub 1 CAPEX', amount: '₹10.0L', pct: '22%', timing: 'Month 1', detail: 'Machine ₹4L + Van ₹3L + Store ₹1.5L + Marketing ₹1L + Tech ₹30K + Supplies ₹20K', fill: 'neo-card-peach' },
+    { label: 'Hub 2 CAPEX', amount: '₹8.3L', pct: '18%', timing: 'Month 13', detail: '', fill: 'neo-card-yellow' },
+    { label: 'Hub 3 CAPEX', amount: '₹8.3L', pct: '18%', timing: 'Month 19', detail: '', fill: 'neo-card-mint' },
+    { label: 'Ops Losses M1-5', amount: '₹1.5L', pct: '3%', timing: '', detail: '', fill: 'neo-card-flat bg-[#F5F0E8]' },
+    { label: 'Buffer + Contingency', amount: '₹9.5L', pct: '21%', timing: '', detail: '', fill: 'neo-card-flat bg-[#F5F0E8]' },
+    { label: 'Unallocated Reserve', amount: '₹7.4L', pct: '16%', timing: '', detail: '', fill: 'neo-card-lavender' },
+];
+
 export function SlideNine() {
     return (
         <div className="slide-container retro-grid">
-            <div className="slide-number">09 / 17</div>
+            <div className="slide-number">09 / 19</div>
 
-            <div className="max-w-5xl mx-auto w-full text-center px-4 sm:px-6">
-                <div className="neo-tag-yellow inline-flex mb-5 animate-fade-in">
-                    <span>TAM · SAM · SOM</span>
+            <div className="max-w-5xl mx-auto w-full px-4 sm:px-6">
+                <div className="text-center mb-3 sm:mb-5">
+                    <div className="neo-tag-coral inline-flex mb-2 sm:mb-4 animate-fade-in">
+                        <span>Capital Deployment</span>
+                    </div>
+                    <h2 className="font-display text-xl sm:text-3xl md:text-4xl text-[#1A1A1A] animate-slide-up">
+                        80% of Your Money <span className="text-[#FF3366]">Still in the Bank After Year 1</span>
+                    </h2>
                 </div>
 
-                <h2 className="font-display text-xl sm:text-3xl md:text-4xl text-[#1A1A1A] mb-3 sm:mb-5 animate-slide-up">
-                    ₹2.1 Lakh Crore. <span className="text-[#FF3366]">And nobody&apos;s building the infrastructure.</span>
-                </h2>
-
-                <div className="max-w-3xl mx-auto space-y-3 mb-5">
-                    {/* TAM */}
-                    <div className="neo-card-lavender p-4 md:p-5 text-left animate-slide-left animate-delay-2 w-full">
-                        <div className="flex items-center justify-between mb-2">
-                            <div className="flex items-center gap-3">
-                                <span className="neo-tag text-[8px] bg-white">TAM</span>
-                                <span className="font-display text-sm text-[#1A1A1A]">India&apos;s Garment Aftercare Economy</span>
+                <div className="grid grid-cols-2 sm:grid-cols-3 gap-2 sm:gap-3 max-w-4xl mx-auto mb-4 sm:mb-5">
+                    {ALLOCATIONS.map((a, i) => (
+                        <div key={i} className={`${a.fill} p-2 sm:p-3 animate-slide-up animate-delay-${i + 2}`}>
+                            <div className="flex items-center gap-1.5 mb-1">
+                                <span className="font-mono text-[9px] sm:text-[10px] font-bold text-[#FF3366]">{a.pct}</span>
+                                {a.timing && <span className="font-mono text-[7px] sm:text-[8px] text-[#8A8A8A]">· {a.timing}</span>}
                             </div>
-                            <span className="stat-number text-2xl md:text-3xl text-[#1A1A1A]">₹2.1L Cr</span>
+                            <h3 className="font-display text-[10px] sm:text-xs text-[#1A1A1A] mb-0.5">{a.label}</h3>
+                            <span className="stat-number text-sm sm:text-lg text-[#1A1A1A]">{a.amount}</span>
+                            {a.detail && <p className="text-[7px] sm:text-[8px] text-[#8A8A8A] mt-1">{a.detail}</p>}
                         </div>
-                        <div className="flex flex-wrap gap-1 mt-2">
-                            {[
-                                'Household ₹65K Cr', 'Commercial ₹50K Cr', 'Products ₹50K Cr',
-                                'Institutional ₹27.5K Cr', 'Rural ₹12K Cr',
-                            ].map((s, i) => (
-                                <span key={i} className="font-mono text-[8px] px-1.5 py-0.5 bg-white border border-[#1A1A1A]/15 text-[#4A4A4A]">{s}</span>
-                            ))}
-                        </div>
-                        <p className="text-[9px] text-[#8A8A8A] mt-2">We start with ironing. We end up owning the full stack.</p>
-                    </div>
-
-                    {/* SAM */}
-                    <div className="neo-card-yellow p-4 md:p-5 text-left animate-slide-left animate-delay-4" style={{ width: '75%', margin: '0 auto' }}>
-                        <div className="flex items-center justify-between mb-1">
-                            <div className="flex items-center gap-3">
-                                <span className="neo-tag text-[8px] bg-white">SAM</span>
-                                <span className="font-display text-sm text-[#1A1A1A]">Urban T1/T2 — Top 30 Cities</span>
-                            </div>
-                            <span className="stat-number text-2xl md:text-3xl text-[#1A1A1A]">₹48K Cr</span>
-                        </div>
-                        <p className="text-[9px] text-[#8A8A8A]">12 Cr households + commercial + institutional. Hub network across 30 cities in 5-7 years.</p>
-                    </div>
-
-                    {/* SOM */}
-                    <div className="neo-card-solid-pink p-4 md:p-5 text-left animate-slide-left animate-delay-5 shadow-[5px_5px_0px_#1A1A1A]" style={{ width: '50%', margin: '0 auto' }}>
-                        <div className="flex items-center justify-between mb-1">
-                            <div className="flex items-center gap-3">
-                                <span className="neo-tag text-[8px] bg-white text-[#1A1A1A]">SOM</span>
-                                <span className="font-display text-sm text-white">5-Year Target</span>
-                            </div>
-                            <span className="stat-number text-xl md:text-2xl text-white">₹800-1,200 Cr</span>
-                        </div>
-                        <p className="text-[9px] text-white/80">500+ hubs · 15 cities · &lt;2.5% SAM capture</p>
-                    </div>
+                    ))}
                 </div>
 
-                <div className="neo-card-solid-yellow p-3 max-w-2xl mx-auto animate-scale-in animate-delay-7 shadow-[4px_4px_0px_#1A1A1A]">
-                    <p className="text-xs md:text-sm font-bold text-[#1A1A1A]">
-                        Even at &lt;2.5% market capture, we&apos;re building a ₹1,000 Cr revenue company.
-                        <span className="text-[#FF3366]"> The market isn&apos;t the question. Execution is. And we&apos;ve already started.</span>
+                <div className="neo-card-solid-pink p-3 sm:p-4 max-w-3xl mx-auto text-center animate-scale-in animate-delay-9 shadow-[4px_4px_0px_#1A1A1A]">
+                    <h4 className="font-display text-xs sm:text-sm text-white mb-1.5">Capital Protection</h4>
+                    <p className="text-[10px] sm:text-[11px] text-white/90 leading-relaxed">
+                        Worst-case shutdown at Month 12 — 92-94% recoverable. ₹36.3L cash + ₹5-6L assets = <span className="font-bold text-white">₹41-42L out of ₹45L.</span>
+                    </p>
+                    <p className="text-[9px] sm:text-[10px] text-white/60 mt-1.5">
+                        At no point is the full ₹45L at risk simultaneously.
                     </p>
                 </div>
             </div>

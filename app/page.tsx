@@ -18,14 +18,18 @@ import { SlideFourteen } from '@/components/slides/SlideFourteen';
 import { SlideFifteen } from '@/components/slides/SlideFifteen';
 import { SlideSixteen } from '@/components/slides/SlideSixteen';
 import { SlideSeventeen } from '@/components/slides/SlideSeventeen';
+import { SlideEighteen } from '@/components/slides/SlideEighteen';
+import { SlideNineteen } from '@/components/slides/SlideNineteen';
 import { SlideNavigation } from '@/components/deck/SlideNavigation';
 import { GrainOverlay } from '@/components/deck/GrainOverlay';
+import { MobileOverlay } from '@/components/deck/MobileOverlay';
 
 const SLIDES = [
   SlideOne, SlideTwo, SlideThree, SlideFour, SlideFive,
   SlideSix, SlideSeven, SlideEight, SlideNine, SlideTen,
   SlideEleven, SlideTwelve, SlideThirteen, SlideFourteen,
-  SlideFifteen, SlideSixteen, SlideSeventeen,
+  SlideFifteen, SlideSixteen, SlideSeventeen, SlideEighteen,
+  SlideNineteen,
 ];
 
 export default function Home() {
@@ -116,6 +120,7 @@ export default function Home() {
   return (
     <main className="relative w-full h-screen overflow-hidden bg-[#FAF7F2]">
       <GrainOverlay />
+      <MobileOverlay />
 
       <div className="relative z-10 w-full h-full">
         <div

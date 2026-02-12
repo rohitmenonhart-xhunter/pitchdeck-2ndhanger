@@ -1,73 +1,71 @@
 'use client';
 
+const RAMP = [
+    { month: 'M1', pcs: '150', profit: '-₹5K' },
+    { month: 'M2', pcs: '200', profit: '+₹10K' },
+    { month: 'M3', pcs: '260', profit: '+₹30K' },
+    { month: 'M6', pcs: '420', profit: '+₹71K' },
+    { month: 'M9', pcs: '500', profit: '+₹99K' },
+    { month: 'M12', pcs: '570', profit: '+₹1.15L' },
+];
+
 export function SlideSeven() {
     return (
         <div className="slide-container retro-grid">
-            <div className="slide-number">07 / 17</div>
+            <div className="slide-number">07 / 19</div>
 
             <div className="max-w-5xl mx-auto w-full px-4 sm:px-6">
                 <div className="text-center mb-3 sm:mb-5 md:mb-6">
                     <div className="neo-tag-yellow inline-flex mb-2 sm:mb-4 animate-fade-in">
-                        <span>Our Unfair Advantage</span>
+                        <span>Hub Economics</span>
                     </div>
                     <h2 className="font-display text-xl sm:text-3xl md:text-4xl text-[#1A1A1A] animate-slide-up">
-                        One machine replaces <span className="text-[#FF3366]">an entire dhobi market.</span>
+                        Single Hub = <span className="text-[#FF3366]">₹1.15L/month Profit</span> at Steady State
                     </h2>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-3 sm:gap-4 max-w-4xl mx-auto mb-3 sm:mb-4">
-                    {/* Machine */}
-                    <div className="neo-card-solid-pink p-3 sm:p-4 md:p-5 shadow-[5px_5px_0px_#1A1A1A] animate-slide-right animate-delay-2">
-                        <h3 className="font-display text-sm sm:text-base text-white mb-2 sm:mb-3">The Machine</h3>
-                        <div className="space-y-1 sm:space-y-2">
-                            {[
-                                { label: 'Output', value: '70-80 garments/hour' },
-                                { label: 'Shift', value: '560-640 pcs / 8 hrs' },
-                                { label: 'Operators', value: 'Just 2 people' },
-                                { label: 'Daily revenue', value: '₹8,400 at ₹14/pc' },
-                                { label: 'Quality', value: 'Uniform steam finish' },
-                            ].map((item, i) => (
-                                <div key={i} className="flex items-center justify-between py-1 sm:py-1.5 border-b border-white/15 last:border-0">
-                                    <span className="text-[10px] sm:text-[11px] text-white/70">{item.label}</span>
-                                    <span className="font-mono text-[10px] sm:text-xs font-bold text-white">{item.value}</span>
-                                </div>
-                            ))}
-                        </div>
+                {/* Key stats */}
+                <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 sm:gap-3 max-w-4xl mx-auto mb-4 sm:mb-5 animate-fade-in animate-delay-2">
+                    <div className="neo-card-peach p-2 sm:p-3 text-center">
+                        <span className="stat-number text-base sm:text-xl text-[#1A1A1A]">₹65K</span>
+                        <span className="font-mono text-[8px] sm:text-[9px] text-[#4A4A4A] block mt-1">HUB OPEX/MO</span>
                     </div>
-
-                    {/* Dhobi */}
-                    <div className="neo-card-flat p-3 sm:p-4 md:p-5 bg-[#F5F0E8] animate-slide-left animate-delay-3">
-                        <h3 className="font-display text-sm sm:text-base text-[#8A8A8A] mb-2 sm:mb-3">The Dhobi</h3>
-                        <div className="space-y-1 sm:space-y-2">
-                            {[
-                                { label: 'Output', value: '40-50 pcs/day' },
-                                { label: 'Workers needed', value: '12-15 to match' },
-                                { label: 'Labour cost', value: '₹1.5-2L/month' },
-                                { label: 'Daily revenue', value: '₹400-500' },
-                                { label: 'Quality', value: 'Inconsistent, burns' },
-                            ].map((item, i) => (
-                                <div key={i} className="flex items-center justify-between py-1 sm:py-1.5 border-b border-[#1A1A1A]/10 last:border-0">
-                                    <span className="text-[10px] sm:text-[11px] text-[#8A8A8A]">{item.label}</span>
-                                    <span className="font-mono text-[10px] sm:text-xs text-[#8A8A8A]">{item.value}</span>
-                                </div>
-                            ))}
-                        </div>
+                    <div className="neo-card-yellow p-2 sm:p-3 text-center">
+                        <span className="stat-number text-base sm:text-xl text-[#1A1A1A]">155 pcs</span>
+                        <span className="font-mono text-[8px] sm:text-[9px] text-[#4A4A4A] block mt-1">DAILY BREAKEVEN</span>
+                    </div>
+                    <div className="neo-card-mint p-2 sm:p-3 text-center">
+                        <span className="stat-number text-base sm:text-xl text-[#1A1A1A]">Month 2</span>
+                        <span className="font-mono text-[8px] sm:text-[9px] text-[#4A4A4A] block mt-1">HUB PROFITABLE</span>
+                    </div>
+                    <div className="neo-card-solid-pink p-2 sm:p-3 text-center shadow-[3px_3px_0px_#1A1A1A]">
+                        <span className="stat-number text-base sm:text-xl text-white">57%</span>
+                        <span className="font-mono text-[8px] sm:text-[9px] text-white/70 block mt-1">PROFIT MARGIN</span>
                     </div>
                 </div>
 
-                {/* Bottom row — no emojis, using styled X marks */}
-                <div className="grid grid-cols-2 sm:grid-cols-4 gap-1.5 sm:gap-2 max-w-3xl mx-auto animate-fade-in animate-delay-5">
-                    {['No sick days', 'No quitting', 'No burned sarees', 'No lost garments'].map((label, i) => (
-                        <div key={i} className="neo-card-mint p-2 text-center">
-                            <span className="font-mono text-sm sm:text-lg font-bold text-[#FF3366]">✕</span>
-                            <div className="font-mono text-[7px] sm:text-[8px] text-[#4A4A4A] mt-0.5 sm:mt-1">{label}</div>
-                        </div>
-                    ))}
+                {/* 12-Month Ramp Table */}
+                <div className="neo-card-flat p-3 sm:p-4 max-w-3xl mx-auto mb-3 sm:mb-4 animate-slide-up animate-delay-4">
+                    <h3 className="font-display text-xs sm:text-sm text-[#1A1A1A] mb-2 sm:mb-3">12-Month Hub Ramp</h3>
+                    <div className="grid grid-cols-6 gap-1 sm:gap-2">
+                        {RAMP.map((r, i) => {
+                            const isPositive = r.profit.startsWith('+');
+                            return (
+                                <div key={i} className={`p-1.5 sm:p-2 text-center border ${isPositive ? 'bg-[#E8F5E9] border-[#4CAF50]/20' : 'bg-[#FFF3E0] border-[#FF9800]/20'}`}>
+                                    <span className="font-mono text-[8px] sm:text-[9px] font-bold text-[#1A1A1A] block">{r.month}</span>
+                                    <span className="font-mono text-[8px] sm:text-[9px] text-[#8A8A8A] block">{r.pcs}/d</span>
+                                    <span className={`font-mono text-[8px] sm:text-[10px] font-bold block ${isPositive ? 'text-[#4CAF50]' : 'text-[#FF9800]'}`}>{r.profit}</span>
+                                </div>
+                            );
+                        })}
+                    </div>
                 </div>
 
-                <p className="text-center text-[10px] sm:text-xs text-[#8A8A8A] mt-3 sm:mt-4 px-2 animate-fade-in animate-delay-7">
-                    Not a marginal improvement. <span className="text-[#FF3366] font-bold">A structural disruption of the entire supply side.</span>
-                </p>
+                <div className="neo-card-solid-yellow p-2 sm:p-3 max-w-xl mx-auto text-center animate-scale-in animate-delay-6 shadow-[3px_3px_0px_#1A1A1A]">
+                    <p className="text-[10px] sm:text-xs font-bold text-[#1A1A1A]">
+                        Year 1 Hub Cumulative Profit: <span className="text-[#FF3366]">₹8.04L</span>
+                    </p>
+                </div>
             </div>
         </div>
     );

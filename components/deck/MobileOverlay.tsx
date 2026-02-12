@@ -37,7 +37,7 @@ export function MobileOverlay() {
                 </div>
 
                 <p className="font-garamond text-lg text-white/90 mb-2 leading-snug">
-                    This slide is best experienced on a larger screen
+                    This deck is best experienced on a larger screen
                 </p>
                 <p className="font-mono text-[9px] text-white/40 tracking-wider mb-5">
                     OPTIMISED FOR DESKTOP & TABLET

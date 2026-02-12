@@ -1,90 +1,87 @@
 'use client';
 
+const MONTHS = [
+    { m: 'M1', val: '-₹62K' },
+    { m: 'M2', val: '-₹47K' },
+    { m: 'M3', val: '-₹26K' },
+    { m: 'M4', val: '-₹10K' },
+    { m: 'M5', val: '-₹2K' },
+    { m: 'M6', val: '+₹15K' },
+    { m: 'M7', val: '+₹25K' },
+    { m: 'M8', val: '+₹36K' },
+    { m: 'M9', val: '+₹42K' },
+    { m: 'M10', val: '+₹45K' },
+    { m: 'M11', val: '+₹52K' },
+    { m: 'M12', val: '+₹58K' },
+];
+
 export function SlideEight() {
     return (
         <div className="slide-container retro-grid">
-            <div className="slide-number">08 / 17</div>
+            <div className="slide-number">08 / 19</div>
 
-            <div className="max-w-6xl mx-auto w-full px-4 sm:px-6">
-                <div className="text-center mb-3 sm:mb-4 md:mb-5">
-                    <div className="neo-tag inline-flex mb-2 sm:mb-3 animate-fade-in">
-                        <span>The Product</span>
+            <div className="max-w-5xl mx-auto w-full px-4 sm:px-6">
+                <div className="text-center mb-3 sm:mb-5">
+                    <div className="neo-tag-pink inline-flex mb-2 sm:mb-4 animate-fade-in">
+                        <span>Company P&L</span>
                     </div>
                     <h2 className="font-display text-xl sm:text-3xl md:text-4xl text-[#1A1A1A] animate-slide-up">
-                        Doorstep garment care. Three tiers. <span className="text-[#FF3366]">Same day.</span>
+                        Company Profitable by Month 6. <span className="text-[#FF3366]">All Founders Paid.</span>
                     </h2>
                 </div>
 
-                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-2 sm:gap-3 md:gap-4">
-                    {/* Order */}
-                    <div className="neo-card-peach p-3 sm:p-4 md:p-5 animate-slide-up animate-delay-2">
-                        <div className="flex items-center gap-2 mb-2 sm:mb-3">
-                            <span className="w-5 h-5 flex items-center justify-center bg-white border-2 border-[#1A1A1A] text-[10px] font-bold text-[#FF3366]">1</span>
-                            <h3 className="font-display text-xs sm:text-sm text-[#1A1A1A]">Order</h3>
-                        </div>
-                        <div className="space-y-1 sm:space-y-1.5">
-                            {[
-                                { tier: 'Standard', price: '₹11/pc', desc: 'Shirts, pants, kurtis' },
-                                { tier: 'Delicate', price: '₹18-20/pc', desc: 'Embroidery, zari' },
-                                { tier: 'Saree', price: '₹30/pc', desc: '40% cheaper than dhobi' },
-                                { tier: 'Aroma', price: '+₹3/pc', desc: 'Lavender, rose mist' },
-                            ].map((item, i) => (
-                                <div key={i} className="flex items-center justify-between py-0.5 sm:py-1 border-b border-[#1A1A1A]/10 last:border-0">
-                                    <div>
-                                        <span className="text-[9px] sm:text-[10px] font-bold text-[#1A1A1A]">{item.tier}</span>
-                                        <span className="text-[8px] sm:text-[9px] text-[#8A8A8A] ml-1">{item.desc}</span>
-                                    </div>
-                                    <span className="font-mono text-[9px] sm:text-[10px] font-bold text-[#FF3366]">{item.price}</span>
-                                </div>
-                            ))}
-                        </div>
-                        <div className="mt-2 sm:mt-3 p-1 sm:p-1.5 bg-white border border-[#1A1A1A]/10 text-center">
-                            <span className="font-mono text-[7px] sm:text-[8px] text-[#4A4A4A]">Before 2 PM → same-day delivery</span>
-                        </div>
+                {/* Overhead */}
+                <div className="neo-card-flat p-2 sm:p-3 max-w-3xl mx-auto mb-3 sm:mb-4 animate-fade-in animate-delay-2">
+                    <div className="flex items-center justify-between mb-1.5">
+                        <span className="font-display text-xs sm:text-sm text-[#1A1A1A]">Company Overhead</span>
+                        <span className="stat-number text-base sm:text-xl text-[#FF3366]">₹56,500/mo</span>
                     </div>
-
-                    {/* Process */}
-                    <div className="neo-card-yellow p-3 sm:p-4 md:p-5 animate-slide-up animate-delay-3">
-                        <div className="flex items-center gap-2 mb-2 sm:mb-3">
-                            <span className="w-5 h-5 flex items-center justify-center bg-white border-2 border-[#1A1A1A] text-[10px] font-bold text-[#FF3366]">2</span>
-                            <h3 className="font-display text-xs sm:text-sm text-[#1A1A1A]">Process</h3>
-                        </div>
-                        <div className="space-y-1 sm:space-y-1.5">
-                            {[
-                                { label: 'Hub', value: '300-400 sq ft dark hub' },
-                                { label: 'Model', value: 'No walk-ins. Pure factory.' },
-                                { label: 'Flow', value: 'Tag → Press → QC → Pack' },
-                                { label: 'Speed', value: '70-80 pcs/hour flowing' },
-                                { label: 'Finish', value: 'Protective covers on all' },
-                            ].map((item, i) => (
-                                <div key={i} className="flex items-center justify-between py-0.5 sm:py-1 border-b border-[#1A1A1A]/10 last:border-0">
-                                    <span className="text-[9px] sm:text-[10px] text-[#8A8A8A]">{item.label}</span>
-                                    <span className="text-[9px] sm:text-[10px] font-bold text-[#1A1A1A]">{item.value}</span>
-                                </div>
-                            ))}
-                        </div>
+                    <div className="flex flex-wrap gap-1.5 sm:gap-2">
+                        {[
+                            { name: 'Rohit (CEO/Tech)', amt: '₹20K' },
+                            { name: 'Murahari (Ops)', amt: '₹15K' },
+                            { name: 'Vibhav (Mktg)', amt: '₹15K' },
+                            { name: 'Admin', amt: '₹6.5K' },
+                        ].map((f, i) => (
+                            <span key={i} className="neo-tag text-[7px] sm:text-[8px] bg-white">{f.name} {f.amt}</span>
+                        ))}
                     </div>
+                    <p className="text-[9px] sm:text-[10px] text-[#8A8A8A] mt-1">Stays FLAT regardless of hub count.</p>
+                </div>
 
-                    {/* Deliver */}
-                    <div className="neo-card-mint p-3 sm:p-4 md:p-5 animate-slide-up animate-delay-4 sm:col-span-2 md:col-span-1">
-                        <div className="flex items-center gap-2 mb-2 sm:mb-3">
-                            <span className="w-5 h-5 flex items-center justify-center bg-white border-2 border-[#1A1A1A] text-[10px] font-bold text-[#FF3366]">3</span>
-                            <h3 className="font-display text-xs sm:text-sm text-[#1A1A1A]">Deliver</h3>
-                        </div>
-                        <div className="space-y-1 sm:space-y-1.5">
-                            {[
-                                { label: 'Vehicle', value: 'Branded Tata Ace van' },
-                                { label: 'Radius', value: '5 km from hub' },
-                                { label: 'Routes', value: 'Route-optimised' },
-                                { label: 'Tracking', value: 'Real-time notifications' },
-                                { label: 'Result', value: 'Fresh, crisp, doorstep' },
-                            ].map((item, i) => (
-                                <div key={i} className="flex items-center justify-between py-0.5 sm:py-1 border-b border-[#1A1A1A]/10 last:border-0">
-                                    <span className="text-[9px] sm:text-[10px] text-[#8A8A8A]">{item.label}</span>
-                                    <span className="text-[9px] sm:text-[10px] font-bold text-[#1A1A1A]">{item.value}</span>
+                {/* Monthly P&L */}
+                <div className="neo-card-flat p-3 sm:p-4 max-w-4xl mx-auto mb-3 sm:mb-4 animate-slide-up animate-delay-3">
+                    <h3 className="font-display text-xs sm:text-sm text-[#1A1A1A] mb-2 sm:mb-3">Month-by-Month</h3>
+                    <div className="grid grid-cols-6 sm:grid-cols-12 gap-1">
+                        {MONTHS.map((m) => {
+                            const isPositive = m.val.startsWith('+');
+                            return (
+                                <div key={m.m} className={`p-1 sm:p-1.5 text-center border ${isPositive ? 'bg-[#E8F5E9] border-[#4CAF50]/20' : 'bg-[#FFF3E0] border-[#FF9800]/20'}`}>
+                                    <span className="font-mono text-[7px] sm:text-[8px] font-bold text-[#1A1A1A] block">{m.m}</span>
+                                    <span className={`font-mono text-[7px] sm:text-[9px] font-bold block ${isPositive ? 'text-[#4CAF50]' : 'text-[#FF9800]'}`}>{m.val}</span>
                                 </div>
-                            ))}
-                        </div>
+                            );
+                        })}
+                    </div>
+                </div>
+
+                {/* Year 1 stats */}
+                <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 sm:gap-3 max-w-4xl mx-auto animate-fade-in animate-delay-5">
+                    <div className="neo-card-yellow p-2 sm:p-3 text-center">
+                        <span className="stat-number text-base sm:text-xl text-[#1A1A1A]">₹15.5L</span>
+                        <span className="font-mono text-[8px] sm:text-[9px] text-[#4A4A4A] block mt-1">Y1 REVENUE</span>
+                    </div>
+                    <div className="neo-card-mint p-2 sm:p-3 text-center">
+                        <span className="stat-number text-base sm:text-xl text-[#4CAF50]">+₹1.26L</span>
+                        <span className="font-mono text-[8px] sm:text-[9px] text-[#4A4A4A] block mt-1">Y1 NET PROFIT</span>
+                    </div>
+                    <div className="neo-card-solid-pink p-2 sm:p-3 text-center shadow-[3px_3px_0px_#1A1A1A]">
+                        <span className="stat-number text-base sm:text-xl text-white">₹36.26L</span>
+                        <span className="font-mono text-[8px] sm:text-[9px] text-white/70 block mt-1">Y1 BANK BALANCE</span>
+                    </div>
+                    <div className="neo-card-peach p-2 sm:p-3 text-center">
+                        <span className="stat-number text-base sm:text-xl text-[#FF9800]">₹1.47L</span>
+                        <span className="font-mono text-[8px] sm:text-[9px] text-[#4A4A4A] block mt-1">PEAK LOSS (M5)</span>
                     </div>
                 </div>
             </div>
