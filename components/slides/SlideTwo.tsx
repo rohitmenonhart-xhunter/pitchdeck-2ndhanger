@@ -1,27 +1,15 @@
 'use client';
 
 const PAIN_POINTS = [
-  {
-    title: 'Damage Risk',
-    desc: 'Coal irons burn, scorch, and leave marks. One mistake ruins a ₹2,000 shirt. Zero compensation.',
-    fill: 'neo-card-peach',
-  },
-  {
-    title: 'Inconvenience',
-    desc: 'Carry clothes to the dhobi, wait 1-2 days, go back to collect. No doorstep. No tracking.',
-    fill: 'neo-card-yellow',
-  },
-  {
-    title: 'Unreliability',
-    desc: 'No fixed timing. No quality guarantee. Different results every time.',
-    fill: 'neo-card-mint',
-  },
+  { title: 'Burns & Damage', desc: 'Coal irons burn, scorch, and leave marks. Zero compensation. Zero accountability.', fill: 'neo-card-peach' },
+  { title: '2-Day Turnaround', desc: 'Carry clothes to the dhobi, wait 1-2 days, go back to collect. No doorstep. No tracking.', fill: 'neo-card-yellow' },
+  { title: 'No Alternatives', desc: 'UClean charges ₹40-60/piece = ₹2-3K/month. Nobody pays that for ironing. The 90% have zero options.', fill: 'neo-card-mint' },
 ];
 
 export function SlideTwo() {
   return (
     <div className="slide-container retro-grid">
-      <div className="slide-number">02 / 19</div>
+      <div className="slide-number">02 / 17</div>
 
       <div className="max-w-5xl mx-auto w-full px-4 sm:px-6">
         <div className="text-center mb-3 sm:mb-5 md:mb-6">
@@ -34,11 +22,9 @@ export function SlideTwo() {
         </div>
 
         <p className="text-[11px] sm:text-sm text-[#4A4A4A] text-center max-w-3xl mx-auto mb-4 sm:mb-6 animate-fade-in animate-delay-1 leading-relaxed">
-          Every Indian household irons clothes. The solution hasn&apos;t changed in 70 years — a roadside dhobi with a coal iron.
-          No quality control, no accountability, and a real risk of damage to your clothes.
+          Every Indian household irons clothes every week. The solution hasn&apos;t changed in 70 years — a roadside dhobi with a coal iron.
         </p>
 
-        {/* Pain points */}
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-2 sm:gap-3 md:gap-4 max-w-4xl mx-auto mb-4 sm:mb-5">
           {PAIN_POINTS.map((item, i) => (
             <div key={i} className={`${item.fill} p-3 sm:p-4 md:p-5 animate-slide-up animate-delay-${i + 2}`}>
@@ -51,10 +37,9 @@ export function SlideTwo() {
           ))}
         </div>
 
-        <div className="neo-card-solid-pink p-3 max-w-2xl mx-auto text-center animate-scale-in animate-delay-6 shadow-[4px_4px_0px_#1A1A1A]">
-          <p className="text-[10px] sm:text-sm font-bold text-white">
-            95%+ of the market remains unorganised. The existing organised players focus on premium laundry —{' '}
-            <span className="text-white/70">nobody has solved everyday ironing at scale.</span>
+        <div className="neo-card-solid-pink p-3 max-w-xl mx-auto text-center animate-scale-in animate-delay-6 shadow-[4px_4px_0px_#1A1A1A]">
+          <p className="text-[11px] sm:text-sm font-bold text-white">
+            Not a convenience problem. <span className="text-white/70">A trust problem.</span>
           </p>
         </div>
       </div>

@@ -3,23 +3,26 @@
 const TEAM = [
     {
         name: 'Rohit',
-        role: 'CEO & Co-Founder',
+        role: 'CEO & CTO',
         equity: '50%',
-        desc: 'Tech-first founder. Background in lighting design software with 3D visualisation. Product, app oversight, investor relations, financial strategy. The tech backbone that makes hub replication scalable.',
+        salary: '₹20K',
+        desc: 'Strategy, tech (builds app in-house), finance. The tech backbone that makes hub replication scalable.',
         fill: 'neo-card-peach',
     },
     {
         name: 'Murahari',
-        role: 'Operations & Co-Founder',
+        role: 'Operations',
         equity: '25%',
-        desc: 'Daily hub manager. Quality control, sorting, tagging, customer coordination. On the ground every day ensuring the machine runs and customers are happy.',
+        salary: '₹15K',
+        desc: 'At hub daily. Quality, sorting, customer coordination. In Coimbatore at machine factory today.',
         fill: 'neo-card-yellow',
     },
     {
         name: 'Vibhav',
-        role: 'Marketing & Co-Founder',
+        role: 'Marketing & Growth',
         equity: '25%',
-        desc: 'Field sales and customer acquisition. Door-to-door apartment outreach, PG partnerships, referral programs. Feet on the street, not ads on a screen.',
+        salary: '₹15K',
+        desc: 'Door-to-door, 60+ families already. Shoe leather, not ads. Field acquisition machine.',
         fill: 'neo-card-mint',
     },
 ];
@@ -27,7 +30,7 @@ const TEAM = [
 export function SlideFifteen() {
     return (
         <div className="slide-container retro-grid">
-            <div className="slide-number">15 / 19</div>
+            <div className="slide-number">15 / 17</div>
 
             <div className="max-w-5xl mx-auto w-full px-4 sm:px-6">
                 <div className="text-center mb-3 sm:mb-5 md:mb-6">
@@ -43,19 +46,20 @@ export function SlideFifteen() {
                     {TEAM.map((t, i) => (
                         <div key={i} className={`${t.fill} p-4 sm:p-5 animate-slide-up animate-delay-${i + 2}`}>
                             <h3 className="font-display text-base sm:text-lg text-[#1A1A1A] mb-0.5">{t.name}</h3>
-                            <span className="font-mono text-[8px] sm:text-[9px] text-[#FF3366] block mb-0.5">{t.role}</span>
-                            <span className="font-mono text-[8px] sm:text-[9px] text-[#8A8A8A] block mb-2">{t.equity}</span>
+                            <span className="font-mono text-[8px] sm:text-[9px] text-[#FF3366] block">{t.role}</span>
+                            <div className="flex items-center gap-2 mt-0.5 mb-2">
+                                <span className="font-mono text-[8px] sm:text-[9px] text-[#8A8A8A]">{t.equity}</span>
+                                <span className="text-[#8A8A8A]">·</span>
+                                <span className="font-mono text-[8px] sm:text-[9px] text-[#8A8A8A]">{t.salary}</span>
+                            </div>
                             <p className="text-[9px] sm:text-[10px] text-[#4A4A4A] leading-relaxed">{t.desc}</p>
                         </div>
                     ))}
                 </div>
 
-                {/* Technology Partner */}
-                <div className="neo-card-solid-pink p-3 sm:p-4 max-w-xl mx-auto text-center shadow-[4px_4px_0px_#1A1A1A] animate-scale-in animate-delay-6">
-                    <span className="font-mono text-[8px] sm:text-[9px] text-white/60 block mb-1">TECHNOLOGY PARTNER</span>
-                    <h3 className="font-display text-sm sm:text-base text-white">Hitroo</h3>
-                    <p className="text-[9px] sm:text-[10px] text-white/80 mt-1">
-                        Kotlin + Express.js app. Order management, route optimisation, customer tracking.
+                <div className="neo-card-solid-pink p-2.5 sm:p-3 max-w-xs mx-auto text-center shadow-[3px_3px_0px_#1A1A1A] animate-scale-in animate-delay-6">
+                    <p className="text-[10px] sm:text-xs font-bold text-white">
+                        All full-time. Zero overlap.
                     </p>
                 </div>
             </div>

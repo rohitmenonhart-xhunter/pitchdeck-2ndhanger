@@ -18,8 +18,6 @@ import { SlideFourteen } from '@/components/slides/SlideFourteen';
 import { SlideFifteen } from '@/components/slides/SlideFifteen';
 import { SlideSixteen } from '@/components/slides/SlideSixteen';
 import { SlideSeventeen } from '@/components/slides/SlideSeventeen';
-import { SlideEighteen } from '@/components/slides/SlideEighteen';
-import { SlideNineteen } from '@/components/slides/SlideNineteen';
 import { SlideNavigation } from '@/components/deck/SlideNavigation';
 import { GrainOverlay } from '@/components/deck/GrainOverlay';
 import { MobileOverlay } from '@/components/deck/MobileOverlay';
@@ -28,8 +26,7 @@ const SLIDES = [
   SlideOne, SlideTwo, SlideThree, SlideFour, SlideFive,
   SlideSix, SlideSeven, SlideEight, SlideNine, SlideTen,
   SlideEleven, SlideTwelve, SlideThirteen, SlideFourteen,
-  SlideFifteen, SlideSixteen, SlideSeventeen, SlideEighteen,
-  SlideNineteen,
+  SlideFifteen, SlideSixteen, SlideSeventeen,
 ];
 
 export default function Home() {

@@ -1,32 +1,9 @@
 'use client';
 
-const TRACTION = [
-    {
-        title: 'Demand Validated',
-        desc: 'Hazel Apartments micro-pilot. Customers paid ₹11 for machine ironing. Repeat orders within first week.',
-        fill: 'neo-card-peach',
-    },
-    {
-        title: 'App Architecture Ready',
-        desc: 'Kotlin frontend, Express.js microservices backend. Technology partner Hitroo onboarded and building.',
-        fill: 'neo-card-yellow',
-    },
-    {
-        title: 'Financial Model Built',
-        desc: 'Every cost line-item researched. Breakeven from first principles. 24-month projections stress-tested across best/base/worst scenarios.',
-        fill: 'neo-card-mint',
-    },
-    {
-        title: 'Team Committed',
-        desc: '3 co-founders. Equity allocated. Roles defined. Ready to launch the day funding lands.',
-        fill: 'neo-card-solid-pink',
-    },
-];
-
 export function SlideFourteen() {
     return (
         <div className="slide-container retro-grid">
-            <div className="slide-number">14 / 19</div>
+            <div className="slide-number">14 / 17</div>
 
             <div className="max-w-5xl mx-auto w-full px-4 sm:px-6">
                 <div className="text-center mb-3 sm:mb-5 md:mb-6">
@@ -38,21 +15,45 @@ export function SlideFourteen() {
                     </h2>
                 </div>
 
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 max-w-4xl mx-auto">
-                    {TRACTION.map((t, i) => {
-                        const isLast = i === TRACTION.length - 1;
-                        return (
-                            <div key={i} className={`${t.fill} p-4 sm:p-5 md:p-6 animate-slide-up animate-delay-${i + 2} ${isLast ? 'shadow-[4px_4px_0px_#1A1A1A]' : ''}`}>
-                                <div className="flex items-center gap-2 mb-2 sm:mb-3">
-                                    <span className={`w-7 h-7 sm:w-8 sm:h-8 flex items-center justify-center border-2 font-mono text-[10px] sm:text-xs font-bold ${isLast ? 'bg-white text-[#FF3366] border-white' : 'bg-white text-[#FF3366] border-[#1A1A1A]/15'}`}>
-                                        {String(i + 1).padStart(2, '0')}
-                                    </span>
-                                    <h3 className={`font-display text-sm sm:text-base ${isLast ? 'text-white' : 'text-[#1A1A1A]'}`}>{t.title}</h3>
-                                </div>
-                                <p className={`text-[10px] sm:text-[11px] leading-relaxed ${isLast ? 'text-white/85' : 'text-[#4A4A4A]'}`}>{t.desc}</p>
-                            </div>
-                        );
-                    })}
+                {/* Hazel Apartments Pilot */}
+                <div className="neo-card-peach p-5 sm:p-6 md:p-8 max-w-2xl mx-auto mb-4 sm:mb-5 animate-slide-up animate-delay-2">
+                    <div className="flex items-center gap-2 sm:gap-3 mb-3 sm:mb-4">
+                        <span className="w-7 h-7 sm:w-8 sm:h-8 flex items-center justify-center bg-white border-2 border-[#1A1A1A]/10 font-mono text-[10px] sm:text-xs font-bold text-[#FF3366]">
+                            01
+                        </span>
+                        <h3 className="font-display text-sm sm:text-base text-[#1A1A1A]">Hazel Apartments Pilot</h3>
+                    </div>
+                    <p className="text-[11px] sm:text-sm text-[#4A4A4A] leading-relaxed mb-3">
+                        Pilot done with just a WhatsApp account. ₹11 paid, zero negotiation, repeat orders same week.
+                    </p>
+                    <div className="grid grid-cols-3 gap-2 sm:gap-3">
+                        <div className="bg-white/60 p-2 sm:p-3 text-center border border-[#1A1A1A]/5">
+                            <span className="stat-number text-base sm:text-xl text-[#FF3366]">₹11</span>
+                            <span className="font-mono text-[7px] sm:text-[8px] text-[#8A8A8A] block mt-0.5">PAID/PIECE</span>
+                        </div>
+                        <div className="bg-white/60 p-2 sm:p-3 text-center border border-[#1A1A1A]/5">
+                            <span className="stat-number text-base sm:text-xl text-[#4CAF50]">Zero</span>
+                            <span className="font-mono text-[7px] sm:text-[8px] text-[#8A8A8A] block mt-0.5">NEGOTIATION</span>
+                        </div>
+                        <div className="bg-white/60 p-2 sm:p-3 text-center border border-[#1A1A1A]/5">
+                            <span className="stat-number text-base sm:text-xl text-[#1A1A1A]">Week 1</span>
+                            <span className="font-mono text-[7px] sm:text-[8px] text-[#8A8A8A] block mt-0.5">REPEAT ORDERS</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div className="neo-card-flat p-2.5 sm:p-3 max-w-3xl mx-auto text-center mb-3 animate-fade-in animate-delay-5">
+                    <p className="text-[9px] sm:text-[11px] text-[#4A4A4A]">
+                        <span className="font-bold text-[#1A1A1A]">Tech:</span> Application being built in Hitroo (Rohit&apos;s dev studio).{' '}
+                        <span className="font-bold text-[#FF3366]">60% complete. Tech cost: ₹3K/month.</span>
+                    </p>
+                </div>
+
+                <div className="neo-card-solid-yellow p-2 sm:p-3 max-w-xl mx-auto text-center animate-scale-in animate-delay-6 shadow-[3px_3px_0px_#1A1A1A]">
+                    <p className="text-[9px] sm:text-xs font-bold text-[#1A1A1A]">
+                        Every number first-principles, supplier-verified.{' '}
+                        <span className="text-[#FF3366]">Murahari at factory today.</span>
+                    </p>
                 </div>
             </div>
         </div>
