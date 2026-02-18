@@ -1,15 +1,9 @@
 'use client';
 
-const PAIN_POINTS = [
-  { title: 'Burns & Damage', desc: 'Coal irons burn, scorch, and leave marks. Zero compensation. Zero accountability.', fill: 'neo-card-peach' },
-  { title: '2-Day Turnaround', desc: 'Carry clothes to the dhobi, wait 1-2 days, go back to collect. No doorstep. No tracking.', fill: 'neo-card-yellow' },
-  { title: 'No Alternatives', desc: 'UClean charges ₹40-60/piece = ₹2-3K/month. Nobody pays that for ironing. The 90% have zero options.', fill: 'neo-card-mint' },
-];
-
 export function SlideTwo() {
   return (
     <div className="slide-container retro-grid">
-      <div className="slide-number">02 / 17</div>
+      <div className="slide-number">02 / 18</div>
 
       <div className="max-w-5xl mx-auto w-full px-4 sm:px-6">
         <div className="text-center mb-3 sm:mb-5 md:mb-6">
@@ -21,26 +15,36 @@ export function SlideTwo() {
           </h2>
         </div>
 
-        <p className="text-[11px] sm:text-sm text-[#4A4A4A] text-center max-w-3xl mx-auto mb-4 sm:mb-6 animate-fade-in animate-delay-1 leading-relaxed">
-          Every Indian household irons clothes every week. The solution hasn&apos;t changed in 70 years — a roadside dhobi with a coal iron.
-        </p>
+        <div className="max-w-3xl mx-auto space-y-3 sm:space-y-4">
+          <div className="neo-card-peach p-3 sm:p-4 md:p-5 animate-slide-up animate-delay-2">
+            <p className="text-[10px] sm:text-sm text-[#4A4A4A] leading-relaxed">
+              Roadside dhobi. Coal iron. Burns. Damage. Zero accountability.
+            </p>
+            <p className="text-[10px] sm:text-sm text-[#4A4A4A] leading-relaxed mt-1.5">
+              Give clothes Saturday. Maybe get back Monday. Maybe Tuesday. <span className="font-bold text-[#1A1A1A]">Maybe he doesn&apos;t show up.</span>
+            </p>
+          </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-2 sm:gap-3 md:gap-4 max-w-4xl mx-auto mb-4 sm:mb-5">
-          {PAIN_POINTS.map((item, i) => (
-            <div key={i} className={`${item.fill} p-3 sm:p-4 md:p-5 animate-slide-up animate-delay-${i + 2}`}>
-              <h3 className="font-display text-sm sm:text-base text-[#1A1A1A] mb-1.5 sm:mb-2 flex items-center gap-2">
-                <span className="w-2.5 h-2.5 bg-[#FF3366] border border-[#1A1A1A] flex-shrink-0" />
-                {item.title}
-              </h3>
-              <p className="text-[10px] sm:text-[11px] text-[#4A4A4A] leading-relaxed">{item.desc}</p>
-            </div>
-          ))}
-        </div>
+          <div className="neo-card-yellow p-3 sm:p-4 md:p-5 animate-slide-up animate-delay-3">
+            <p className="text-[10px] sm:text-sm text-[#4A4A4A] leading-relaxed">
+              Organised players exist — UClean, Tumbledry. <span className="font-bold text-[#1A1A1A]">₹40-60 per piece.</span> A family doing 50 pieces a week pays ₹2,000-3,000 per month just for ironing. Nobody pays that.
+            </p>
+          </div>
 
-        <div className="neo-card-solid-pink p-3 max-w-xl mx-auto text-center animate-scale-in animate-delay-6 shadow-[4px_4px_0px_#1A1A1A]">
-          <p className="text-[11px] sm:text-sm font-bold text-white">
-            Not a convenience problem. <span className="text-white/70">A trust problem.</span>
-          </p>
+          <div className="neo-card-flat p-3 sm:p-4 bg-[#F5F0E8] text-center animate-fade-in animate-delay-4">
+            <p className="text-[10px] sm:text-sm text-[#4A4A4A]">
+              These companies serve the top 5-10%.
+            </p>
+            <p className="text-[10px] sm:text-sm text-[#4A4A4A]">
+              The other 90% is stuck with the dhobi.
+            </p>
+          </div>
+
+          <div className="neo-card-solid-pink p-3 sm:p-4 max-w-md mx-auto text-center shadow-[4px_4px_0px_#1A1A1A] animate-scale-in animate-delay-5">
+            <p className="text-sm sm:text-base font-bold text-white">
+              That 90% is our market.
+            </p>
+          </div>
         </div>
       </div>
     </div>

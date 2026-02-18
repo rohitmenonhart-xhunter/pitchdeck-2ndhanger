@@ -1,83 +1,56 @@
 'use client';
 
-const SCENARIOS = [
-    {
-        label: 'Worst',
-        m1Vol: '100/day',
-        profitable: 'Month 9-10',
-        y1Bank: '~₹33L',
-        fill: 'neo-card-peach',
-    },
-    {
-        label: 'Base',
-        m1Vol: '150/day',
-        profitable: 'Month 5-6',
-        y1Bank: '~₹38L',
-        fill: 'neo-card-yellow',
-    },
-    {
-        label: 'Best',
-        m1Vol: '200/day',
-        profitable: 'Month 4',
-        y1Bank: '~₹42L',
-        fill: 'neo-card-mint',
-    },
-];
-
-const RISKS = [
-    { risk: 'Damage', mitigation: '0.1% rate, ₹5K/month reserve, we pay every claim' },
-    { risk: 'Slow Acquisition', mitigation: '80/day not 150? Hub profitable M6 not M3. ₹10L buffer covers it.' },
-    { risk: 'Operator Attrition', mitigation: '1 week gap, Murahari + 2nd operator cover' },
+const PHASES = [
+    { title: 'Seed (M12-18)', desc: '₹3-5 Cr. 10-15 hubs. Same city. Prove density effects.', fill: 'neo-card-peach' },
+    { title: 'Series A (M24-30)', desc: '50-100 hubs. Franchise model. Multiple cities. Add wash+dry to hubs.', fill: 'neo-card-yellow' },
+    { title: 'Series B+', desc: '500+ hubs. Subscription model. Pan-India.', fill: 'neo-card-solid-pink' },
 ];
 
 export function SlideSixteen() {
     return (
         <div className="slide-container retro-grid">
-            <div className="slide-number">16 / 17</div>
+            <div className="slide-number">16 / 18</div>
 
             <div className="max-w-5xl mx-auto w-full px-4 sm:px-6">
                 <div className="text-center mb-3 sm:mb-5">
                     <div className="neo-tag-coral inline-flex mb-2 sm:mb-4 animate-fade-in">
-                        <span>Risk & Sensitivity</span>
+                        <span>Scaling Roadmap</span>
                     </div>
                     <h2 className="font-display text-xl sm:text-3xl md:text-4xl text-[#1A1A1A] animate-slide-up">
-                        Even in the Worst Case, <span className="text-[#FF3366]">Your Money is Safe.</span>
+                        ₹15L Proves → <span className="text-[#FF3366]">1 Hub Profitable.</span>
                     </h2>
                 </div>
 
-                {/* Scenario table */}
-                <div className="grid grid-cols-3 gap-2 sm:gap-3 max-w-3xl mx-auto mb-4 sm:mb-5">
-                    {SCENARIOS.map((s, i) => (
-                        <div key={i} className={`${s.fill} p-2.5 sm:p-4 animate-slide-up animate-delay-${i + 2}`}>
-                            <h3 className="font-display text-xs sm:text-sm text-[#1A1A1A] mb-2">{s.label}</h3>
-                            <div className="space-y-1.5">
-                                <div><span className="font-mono text-[8px] sm:text-[9px] text-[#8A8A8A]">M1 Vol</span><br /><span className="font-mono text-[9px] sm:text-[11px] font-bold text-[#1A1A1A]">{s.m1Vol}</span></div>
-                                <div><span className="font-mono text-[8px] sm:text-[9px] text-[#8A8A8A]">Co. Profitable</span><br /><span className="font-mono text-[9px] sm:text-[11px] font-bold text-[#1A1A1A]">{s.profitable}</span></div>
-                                <div><span className="font-mono text-[8px] sm:text-[9px] text-[#8A8A8A]">Y1 Bank</span><br /><span className="stat-number text-sm sm:text-lg text-[#FF3366]">{s.y1Bank}</span></div>
-                            </div>
-                        </div>
-                    ))}
-                </div>
-
-                {/* Honest downsides */}
-                <div className="neo-card-flat p-3 sm:p-4 max-w-3xl mx-auto mb-3 sm:mb-4 animate-fade-in animate-delay-6">
-                    <h4 className="font-display text-xs sm:text-sm text-[#1A1A1A] mb-2">Honest Downsides</h4>
-                    <div className="space-y-1.5 sm:space-y-2">
-                        {RISKS.map((r, i) => (
-                            <div key={i} className="flex items-start gap-2 border-b border-[#1A1A1A]/5 pb-1.5">
-                                <span className="font-mono text-[9px] sm:text-[10px] font-bold text-[#FF3366] w-20 sm:w-28 flex-shrink-0">{r.risk}</span>
-                                <span className="text-[9px] sm:text-[10px] text-[#4A4A4A]">{r.mitigation}</span>
-                            </div>
-                        ))}
-                    </div>
-                </div>
-
-                <div className="neo-card-solid-pink p-2.5 sm:p-3 max-w-3xl mx-auto text-center shadow-[4px_4px_0px_#1A1A1A] animate-scale-in animate-delay-8">
-                    <p className="text-[9px] sm:text-[11px] text-white mb-1">
-                        <span className="font-bold">Stress test:</span> 300 pcs max, ₹12 blended, +10% costs → hub still profitable, company survives 40+ months.
+                <div className="neo-card-flat p-3 sm:p-4 max-w-3xl mx-auto mb-3 sm:mb-4 animate-slide-up animate-delay-2">
+                    <p className="text-[10px] sm:text-[11px] text-[#4A4A4A] leading-relaxed mb-2">
+                        Hub 2 onwards: <span className="font-bold text-[#1A1A1A]">₹6.5L each</span> (lower setup, lower marketing).
                     </p>
-                    <p className="text-[9px] sm:text-[10px] text-white/70">
-                        Question of speed, not viability.
+                    <p className="text-[10px] sm:text-[11px] text-[#4A4A4A] leading-relaxed">
+                        Company overhead <span className="font-bold text-[#1A1A1A]">₹68,500 stays flat</span> across all hubs. Every hub makes every other hub&apos;s economics better.
+                    </p>
+                </div>
+
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-2 sm:gap-3 max-w-4xl mx-auto mb-4 sm:mb-5">
+                    {PHASES.map((p, i) => {
+                        const isLast = i === PHASES.length - 1;
+                        return (
+                            <div key={i} className={`${p.fill} p-3 sm:p-4 animate-slide-up animate-delay-${i + 3} ${isLast ? 'shadow-[3px_3px_0px_#1A1A1A]' : ''}`}>
+                                <h3 className={`font-display text-xs sm:text-sm mb-1 ${isLast ? 'text-white' : 'text-[#1A1A1A]'}`}>{p.title}</h3>
+                                <p className={`text-[9px] sm:text-[10px] leading-relaxed ${isLast ? 'text-white/85' : 'text-[#4A4A4A]'}`}>{p.desc}</p>
+                            </div>
+                        );
+                    })}
+                </div>
+
+                <div className="neo-card-flat p-3 sm:p-4 max-w-3xl mx-auto mb-3 animate-fade-in animate-delay-7">
+                    <p className="text-[10px] sm:text-[11px] text-[#4A4A4A] leading-relaxed">
+                        <span className="font-bold text-[#1A1A1A]">Ironing is the entry point.</span> Wash+dry+iron triples revenue per customer. Subscription makes us a household utility. Each phase builds on the proven hub playbook.
+                    </p>
+                </div>
+
+                <div className="neo-card-solid-yellow p-2.5 sm:p-3 max-w-xl mx-auto text-center shadow-[3px_3px_0px_#1A1A1A] animate-scale-in animate-delay-8">
+                    <p className="text-[10px] sm:text-xs font-bold text-[#1A1A1A]">
+                        We&apos;re not asking you to fund the vision. <span className="text-[#FF3366]">We&apos;re asking you to fund the proof.</span>
                     </p>
                 </div>
             </div>

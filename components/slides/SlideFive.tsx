@@ -1,71 +1,45 @@
 'use client';
 
-const SOM_PHASES = [
-    { phase: 'Phase 1 (Your ₹50L)', items: ['3 hubs', '₹70L revenue'] },
-    { phase: 'Post-Seed', items: ['20-30 hubs', '₹8-12 Cr'] },
-    { phase: 'Post-Series A', items: ['100-200 hubs', '₹50-80 Cr'] },
-    { phase: 'Post-Series B', items: ['500-1,000 hubs', '₹200-400 Cr'] },
-];
-
 export function SlideFive() {
     return (
         <div className="slide-container retro-grid">
-            <div className="slide-number">05 / 17</div>
+            <div className="slide-number">05 / 18</div>
 
-            <div className="max-w-5xl mx-auto w-full px-4 sm:px-6">
+            <div className="max-w-4xl mx-auto w-full px-4 sm:px-6">
                 <div className="text-center mb-3 sm:mb-5 md:mb-6">
                     <div className="neo-tag-coral inline-flex mb-2 sm:mb-4 animate-fade-in">
-                        <span>Market Size</span>
+                        <span>Market</span>
                     </div>
                     <h2 className="font-display text-xl sm:text-3xl md:text-4xl text-[#1A1A1A] animate-slide-up">
-                        ₹2.1 Lakh Crore Market. <span className="text-[#FF3366]">Massively Underserved.</span>
+                        ₹48,000 Crore. <span className="text-[#FF3366]">We Need 40 Families.</span>
                     </h2>
                 </div>
 
-                {/* TAM / SAM */}
-                <div className="max-w-3xl mx-auto space-y-2 sm:space-y-3 mb-4 sm:mb-5">
-                    <div className="neo-card-lavender p-3 sm:p-4 md:p-5 text-left animate-slide-left animate-delay-2 w-full">
-                        <div className="flex items-center justify-between mb-1">
-                            <div className="flex items-center gap-2 sm:gap-3">
-                                <span className="neo-tag text-[8px] bg-white">TAM</span>
-                                <span className="font-display text-xs sm:text-sm text-[#1A1A1A]">India&apos;s Total Garment Aftercare</span>
-                            </div>
-                            <span className="stat-number text-lg sm:text-2xl md:text-3xl text-[#1A1A1A]">₹2.1L Cr</span>
-                        </div>
+                <div className="max-w-2xl mx-auto space-y-3 sm:space-y-4">
+                    <div className="neo-card-lavender p-4 sm:p-5 md:p-6 text-center animate-slide-up animate-delay-2">
+                        <span className="stat-number text-3xl sm:text-5xl text-[#1A1A1A]">₹48,000 Cr</span>
+                        <p className="font-mono text-[8px] sm:text-[9px] text-[#8A8A8A] mt-2">URBAN GARMENT AFTERCARE · TOP 50 CITIES</p>
                     </div>
 
-                    <div className="neo-card-yellow p-3 sm:p-4 md:p-5 text-left animate-slide-left animate-delay-3">
-                        <div className="flex items-center justify-between mb-1">
-                            <div className="flex items-center gap-2 sm:gap-3">
-                                <span className="neo-tag text-[8px] bg-white">SAM</span>
-                                <span className="font-display text-xs sm:text-sm text-[#1A1A1A]">Urban, Top 50 Cities</span>
-                            </div>
-                            <span className="stat-number text-lg sm:text-2xl md:text-3xl text-[#1A1A1A]">₹48K Cr</span>
-                        </div>
+                    <div className="neo-card-flat p-3 sm:p-4 bg-[#F5F0E8] text-center animate-fade-in animate-delay-3">
+                        <p className="text-[10px] sm:text-sm text-[#4A4A4A]">
+                            We don&apos;t need 1% of this. We need <span className="font-bold text-[#1A1A1A]">40 families per hub.</span>
+                        </p>
                     </div>
-                </div>
 
-                {/* What we actually capture */}
-                <div className="neo-card-flat p-3 sm:p-4 max-w-3xl mx-auto mb-3 animate-fade-in animate-delay-4">
-                    <h4 className="font-display text-xs sm:text-sm text-[#1A1A1A] mb-2 sm:mb-3">What we actually capture</h4>
-                    <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 sm:gap-3">
-                        {SOM_PHASES.map((p, i) => (
-                            <div key={i} className={`${i === 0 ? 'neo-card-solid-pink shadow-[3px_3px_0px_#1A1A1A]' : 'neo-card-flat bg-[#F5F0E8]'} p-2 sm:p-3`}>
-                                <span className={`font-mono text-[7px] sm:text-[8px] font-bold block mb-1 ${i === 0 ? 'text-white/70' : 'text-[#FF3366]'}`}>{p.phase}</span>
-                                {p.items.map((item, j) => (
-                                    <div key={j} className="flex items-start gap-1">
-                                        <span className={`text-[8px] sm:text-[9px] mt-0.5 ${i === 0 ? 'text-white/60' : 'text-[#FF3366]'}`}>→</span>
-                                        <span className={`text-[8px] sm:text-[9px] ${i === 0 ? 'text-white/90' : 'text-[#4A4A4A]'}`}>{item}</span>
-                                    </div>
-                                ))}
-                            </div>
-                        ))}
+                    <div className="neo-card-yellow p-3 sm:p-4 text-center animate-slide-up animate-delay-4">
+                        <p className="text-[10px] sm:text-sm text-[#4A4A4A]">
+                            Avadi alone: <span className="font-bold text-[#1A1A1A]">50,000+ households.</span> We need 40 to break even.{' '}
+                            <span className="font-bold text-[#FF3366]">0.08%.</span>
+                        </p>
+                    </div>
+
+                    <div className="neo-card-solid-pink p-3 sm:p-4 text-center shadow-[4px_4px_0px_#1A1A1A] animate-scale-in animate-delay-5">
+                        <p className="text-[10px] sm:text-sm font-bold text-white">
+                            The market isn&apos;t the question. Execution is. <span className="text-white/70">That&apos;s what your ₹15 lakhs proves.</span>
+                        </p>
                     </div>
                 </div>
-
-                <p className="text-center text-[9px] sm:text-[10px] text-[#8A8A8A] animate-fade-in animate-delay-7 font-bold">
-                    SOM grows with each round. <span className="text-[#FF3366]">Not on promises.</span>
-                </p>
             </div>
         </div>
     );
